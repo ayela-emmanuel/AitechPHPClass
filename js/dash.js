@@ -2,22 +2,26 @@
 //Get all Delete Btn
 var DelBtns = document.getElementsByClassName("Delete");
 
+
 // Add Onclick
 function clicked(ele){
     //communicate
 
     //Xmlhttp (ajax)----
-    var data = {
-        name: "danny",
-        age: 34
-    }
     var Request = new XMLHttpRequest();
     Request.onload = ()=>{
-        alert(Request.responseText);
+        data = JSON.parse(Request.responseText);
+        console.log(data)
+        if(data.status){
+            document.getElementById("data").innerHTML = data.message
+        }else{
+            alert(data.message)
+        }
+        
     }
-    data = JSON.stringify(data)
-    Request.open("POST","Api/");
-    Request.send(data);
+    //data = JSON.stringify(data)
+    Request.open("GET","Api/");
+    Request.send();
 
     //Fetch
     //jquery

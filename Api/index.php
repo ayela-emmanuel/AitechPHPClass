@@ -1,7 +1,16 @@
 <?php
-$data = file_get_contents("php://input");
-$data = json_decode($data, true);
-echo "Username is ".$data["name"];
+include (__DIR__."/../includes/router.php");
+
+
+
+new Router("GET",function($input){
+    
+    Router::out(true,"Hello My First API");
+});
+
+
+
+
 
 
 

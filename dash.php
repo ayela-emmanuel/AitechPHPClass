@@ -46,4 +46,10 @@ $res = $conn->query($query);
     </tbody>
 
 </table>
+<div id="data">
+        Not Clicked
+</div>
+
+
+
 <script src="./js/dash.js"></script>
