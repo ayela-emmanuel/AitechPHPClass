@@ -36,8 +36,8 @@ $res = $conn->query($query);
             <td><?php echo $row["username"]?></td>
             <td><?php echo $row["role"]?></td>
             <td>
-                <button class="Edit" onclick="clicked('<?php echo $username ?>')">Edit</button>
-                <button class="Delete" >Delete</button>
+                <button class="Edit" onclick="Edit('<?php echo $username ?>')">Edit</button>
+                <button class="Delete" onclick="Delete('<?php echo $username ?>')" >Delete</button>
             </td>
         </tr>
         <?php

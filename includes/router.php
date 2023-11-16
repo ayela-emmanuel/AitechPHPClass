@@ -14,7 +14,7 @@ class Router{
         if($Method === "POST"){
             // php://input
             try{
-                $this->input = json_decode(file_get_contents("php://input"));
+                $this->input = json_decode(file_get_contents("php://input"), true);
             }catch(Exception $e){
                 $this->out(false, "Error Fetching Input");
             }
