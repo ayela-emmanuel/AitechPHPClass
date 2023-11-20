@@ -4,7 +4,7 @@ class Router{
     
     private $input = [];
 
-    public function __construct($Method, $func){
+    public function __construct($Method, $func, $auth = false){
         //Req Method == $Method
         if($Method !== $_SERVER["REQUEST_METHOD"]){
             $this->out(false, "Wrong Method");
@@ -20,6 +20,11 @@ class Router{
             }
         }else if($Method === "GET"){            
             $this->input = $_GET;
+        }
+        if($auth){
+            if(!isset($_SESSION["uid"],$_SESSION["username"])){
+                $this->out(false,"User Not Logged In");
+            }
         }
         $func($this->input);
     }

@@ -16,7 +16,7 @@ new Router("POST",function($input){
         }
     }
     Router::out(false,"No or invalid user at ->".$input["user"]);
-});
+},true);
 
 
 ?>
